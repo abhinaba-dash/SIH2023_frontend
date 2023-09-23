@@ -1,14 +1,14 @@
 import 'dart:core';
 import 'package:flutter/material.dart';
 
-class Home extends StatefulWidget {
-  const Home({super.key});
+class TextConvert extends StatefulWidget {
+  const TextConvert({super.key});
 
   @override
-  State<Home> createState() => _HomeState();
+  State<TextConvert> createState() => _TextConvertState();
 }
 
-class _HomeState extends State<Home> {
+class _TextConvertState extends State<TextConvert> {
   TextEditingController _paragraphController = TextEditingController();
   List<String> _sentences = [];
 
