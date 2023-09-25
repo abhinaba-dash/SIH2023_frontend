@@ -18,7 +18,7 @@ class _HomeState extends State<Home> {
         child: Stack(children: [
           // Background Image
           Image.asset(
-            "assets/images/Ellipse_1.png",
+            "assets/images/Ellipse_f.png",
             height: 300,
             width: width,
             fit: BoxFit.cover,
@@ -92,7 +92,7 @@ class _HomeState extends State<Home> {
                       ],
                     ),
                     style: ElevatedButton.styleFrom(
-                      backgroundColor: Color.fromARGB(255, 14, 47, 210),
+                      backgroundColor: Color.fromARGB(255, 2, 49, 99),
                       shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(30),
                       ),
