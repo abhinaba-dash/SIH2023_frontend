@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:sihflutterapp/pages/home.dart';
-// import 'package:sihflutterapp/pages/BreakText.dart';
 
 class ProjectAdd extends StatefulWidget {
   const ProjectAdd({super.key});
@@ -44,19 +42,34 @@ class _ProjectAddState extends State<ProjectAdd> {
                     IconButton(
                       color: Colors.white,
                       onPressed: () {
-                        Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                              builder: (context) => const Home(),
-                            ));
+                        Navigator.pop(context);
                       },
                       icon: const Icon(Icons.arrow_back),
                     ),
-                    const Text("Enter Project Name",
-                        style: TextStyle(
-                            color: Colors.white,
-                            fontSize: 20,
-                            fontWeight: FontWeight.w400)),
+                    const Padding(
+                      padding: EdgeInsets.symmetric(horizontal: 38.5),
+                      child: SizedBox(
+                        height: 48,
+                        width: 200,
+                        child: Padding(
+                          padding: EdgeInsets.only(top: 12.0),
+                          child: TextField(
+                            style: TextStyle(
+                                color: Colors.white,
+                                fontSize: 20,
+                                fontWeight: FontWeight.w400),
+                            decoration: InputDecoration.collapsed(
+                                hintText: 'Enter Project Name',
+                                hintStyle: TextStyle(
+                                    color: Colors.white,
+                                    fontSize: 20,
+                                    fontWeight: FontWeight.w400)
+                                // labelStyle: TextStyle(color: Colors.black)
+                                ),
+                          ),
+                        ),
+                      ),
+                    ),
                     Image.asset("assets/images/headerim.png"),
                   ],
                 ),
@@ -70,8 +83,7 @@ class _ProjectAddState extends State<ProjectAdd> {
                           color: Colors.white,
                           boxShadow: [
                             BoxShadow(
-                                color: Color.fromARGB(
-                                    255, 220, 219, 219), //New
+                                color: Color.fromARGB(255, 220, 219, 219), //New
                                 blurRadius: 1.0,
                                 offset: Offset(0, 5))
                           ],
@@ -111,13 +123,6 @@ class _ProjectAddState extends State<ProjectAdd> {
                       )),
                 ),
                 ElevatedButton(
-                    // onPressed: () {
-                    //   // Navigator.push(
-                    //   //     context,
-                    //   //     MaterialPageRoute(
-                    //   //       builder: (context) => BreakText(),
-                    //   //     ));
-                    // },
                     onPressed: () => _breakParagraph(context),
                     style: ElevatedButton.styleFrom(
                       backgroundColor: const Color.fromARGB(255, 2, 49, 99),
@@ -133,18 +138,6 @@ class _ProjectAddState extends State<ProjectAdd> {
                         Icon(Icons.arrow_forward),
                       ],
                     )),
-                // SizedBox(height: 16.0),
-                // Container(
-                //   height: 500,
-                //   child: ListView.builder(
-                //     itemCount: _sentences.length,
-                //     itemBuilder: (context, index) {
-                //       return ListTile(
-                //         title: Text(_sentences[index]),
-                //       );
-                //     },
-                //   ),
-                // ),
               ],
             ),
           ),

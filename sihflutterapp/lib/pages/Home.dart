@@ -31,7 +31,6 @@ class _HomeState extends State<Home> {
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    // const IconButton(Icons.format_list_bulleted, color: Colors.white),
                     IconButton(
                         onPressed: () {},
                         icon: const Icon(Icons.format_list_bulleted),

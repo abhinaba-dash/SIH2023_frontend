@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:sihflutterapp/pages/project_add.dart';
 
 class OutputPage extends StatefulWidget {
   const OutputPage({super.key});
@@ -36,11 +35,7 @@ class _OutputPageState extends State<OutputPage> {
                     IconButton(
                       color: Colors.white,
                       onPressed: () {
-                        Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                              builder: (context) => const ProjectAdd(),
-                            ));
+                        Navigator.pop(context);
                       },
                       icon: const Icon(Icons.arrow_back),
                     ),
