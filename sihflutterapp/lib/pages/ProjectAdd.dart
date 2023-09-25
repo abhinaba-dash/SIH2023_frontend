@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:sihflutterapp/pages/Home.dart';
+// import 'package:sihflutterapp/pages/BreakText.dart';
 
 class ProjectAdd extends StatefulWidget {
   const ProjectAdd({super.key});
@@ -9,6 +10,15 @@ class ProjectAdd extends StatefulWidget {
 }
 
 class _ProjectAddState extends State<ProjectAdd> {
+  TextEditingController _paragraphController = TextEditingController();
+
+  void _breakParagraph(BuildContext context) {
+    String paragraph = _paragraphController.text;
+    final RegExp sentenceSplitter = RegExp(r'(?<=[,.!?])\s+');
+    List<String> sentences = paragraph.split(sentenceSplitter);
+    Navigator.pushNamed(context, '/output', arguments: sentences);
+  }
+
   @override
   Widget build(BuildContext context) {
     final height = MediaQuery.of(context).size.height;
@@ -18,7 +28,7 @@ class _ProjectAddState extends State<ProjectAdd> {
         child: Stack(children: [
           // Background Image
           Image.asset(
-            "assets/images/Ellipse_1.png",
+            "assets/images/Ellipse_f.png",
             height: 300,
             width: width,
             fit: BoxFit.cover,
@@ -79,13 +89,14 @@ class _ProjectAddState extends State<ProjectAdd> {
                           child: Padding(
                             padding: EdgeInsets.all(8.0),
                             child: TextField(
+                              controller: _paragraphController,
+                              maxLines: null,
                               style: TextStyle(color: Colors.black),
                               decoration: InputDecoration(
                                 hintText: 'Enter press related text...',
                                 filled: true,
                                 fillColor: Colors.white,
                                 border: OutlineInputBorder(
-                                  // Use OutlineInputBorder with BorderSide.none
                                   borderSide: BorderSide.none,
                                 ),
                                 hintStyle: TextStyle(
@@ -93,7 +104,6 @@ class _ProjectAddState extends State<ProjectAdd> {
                                     fontWeight: FontWeight.w600),
                               ),
                               keyboardType: TextInputType.multiline,
-                              maxLines: null,
                               scribbleEnabled: true,
                             ),
                           ),
@@ -101,7 +111,14 @@ class _ProjectAddState extends State<ProjectAdd> {
                       )),
                 ),
                 ElevatedButton(
-                    onPressed: () {},
+                    // onPressed: () {
+                    //   // Navigator.push(
+                    //   //     context,
+                    //   //     MaterialPageRoute(
+                    //   //       builder: (context) => BreakText(),
+                    //   //     ));
+                    // },
+                    onPressed: () => _breakParagraph(context),
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
@@ -110,12 +127,24 @@ class _ProjectAddState extends State<ProjectAdd> {
                       ],
                     ),
                     style: ElevatedButton.styleFrom(
-                      backgroundColor: Color.fromARGB(255, 14, 47, 210),
+                      backgroundColor: Color.fromARGB(255, 2, 49, 99),
                       shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(30),
                       ),
                       fixedSize: Size(200, 45),
-                    ))
+                    )),
+                // SizedBox(height: 16.0),
+                // Container(
+                //   height: 500,
+                //   child: ListView.builder(
+                //     itemCount: _sentences.length,
+                //     itemBuilder: (context, index) {
+                //       return ListTile(
+                //         title: Text(_sentences[index]),
+                //       );
+                //     },
+                //   ),
+                // ),
               ],
             ),
           ),
