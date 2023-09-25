@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:sihflutterapp/pages/Home.dart';
+import 'package:sihflutterapp/pages/home.dart';
 // import 'package:sihflutterapp/pages/BreakText.dart';
 
 class ProjectAdd extends StatefulWidget {
@@ -10,7 +10,7 @@ class ProjectAdd extends StatefulWidget {
 }
 
 class _ProjectAddState extends State<ProjectAdd> {
-  TextEditingController _paragraphController = TextEditingController();
+  final TextEditingController _paragraphController = TextEditingController();
 
   void _breakParagraph(BuildContext context) {
     String paragraph = _paragraphController.text;
@@ -35,7 +35,7 @@ class _ProjectAddState extends State<ProjectAdd> {
           ),
           Padding(
             padding: EdgeInsets.symmetric(
-                horizontal: width * 0.040, vertical: height * 0.08),
+                horizontal: width * 0.045, vertical: height * 0.08),
             child: Column(
               children: [
                 Row(
@@ -47,12 +47,12 @@ class _ProjectAddState extends State<ProjectAdd> {
                         Navigator.push(
                             context,
                             MaterialPageRoute(
-                              builder: (context) => Home(),
+                              builder: (context) => const Home(),
                             ));
                       },
-                      icon: Icon(Icons.arrow_back),
+                      icon: const Icon(Icons.arrow_back),
                     ),
-                    Text("Enter Project Name",
+                    const Text("Enter Project Name",
                         style: TextStyle(
                             color: Colors.white,
                             fontSize: 20,
@@ -66,11 +66,11 @@ class _ProjectAddState extends State<ProjectAdd> {
                   child: Container(
                       height: height * 0.7,
                       width: width * 1.0,
-                      decoration: BoxDecoration(
+                      decoration: const BoxDecoration(
                           color: Colors.white,
                           boxShadow: [
                             BoxShadow(
-                                color: const Color.fromARGB(
+                                color: Color.fromARGB(
                                     255, 220, 219, 219), //New
                                 blurRadius: 1.0,
                                 offset: Offset(0, 5))
@@ -85,14 +85,14 @@ class _ProjectAddState extends State<ProjectAdd> {
                           decoration: BoxDecoration(
                               border: Border.all(color: Colors.grey),
                               borderRadius:
-                                  BorderRadius.all(Radius.circular(15))),
+                                  const BorderRadius.all(Radius.circular(15))),
                           child: Padding(
-                            padding: EdgeInsets.all(8.0),
+                            padding: const EdgeInsets.all(8.0),
                             child: TextField(
                               controller: _paragraphController,
                               maxLines: null,
-                              style: TextStyle(color: Colors.black),
-                              decoration: InputDecoration(
+                              style: const TextStyle(color: Colors.black),
+                              decoration: const InputDecoration(
                                 hintText: 'Enter press related text...',
                                 filled: true,
                                 fillColor: Colors.white,
@@ -119,19 +119,19 @@ class _ProjectAddState extends State<ProjectAdd> {
                     //   //     ));
                     // },
                     onPressed: () => _breakParagraph(context),
-                    child: Row(
+                    style: ElevatedButton.styleFrom(
+                      backgroundColor: const Color.fromARGB(255, 2, 49, 99),
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(30),
+                      ),
+                      fixedSize: const Size(200, 45),
+                    ),
+                    child: const Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         Text("Submit"),
                         Icon(Icons.arrow_forward),
                       ],
-                    ),
-                    style: ElevatedButton.styleFrom(
-                      backgroundColor: Color.fromARGB(255, 2, 49, 99),
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(30),
-                      ),
-                      fixedSize: Size(200, 45),
                     )),
                 // SizedBox(height: 16.0),
                 // Container(
