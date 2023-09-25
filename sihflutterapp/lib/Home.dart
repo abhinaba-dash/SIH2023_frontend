@@ -9,7 +9,7 @@ class Home extends StatefulWidget {
 }
 
 class _HomeState extends State<Home> {
-  TextEditingController _paragraphController = TextEditingController();
+  final TextEditingController _paragraphController = TextEditingController();
   List<String> _sentences = [];
 
   void _breakParagraph() {
@@ -25,8 +25,8 @@ class _HomeState extends State<Home> {
     return Scaffold(
       body: SingleChildScrollView(
         child: Padding(
-          padding: EdgeInsets.all(16.0),
-          child: Container(
+          padding: const EdgeInsets.all(16.0),
+          child: SizedBox(
             height: 1000,
             width: 400,
             child: Column(
@@ -34,14 +34,14 @@ class _HomeState extends State<Home> {
                 TextField(
                   controller: _paragraphController,
                   maxLines: 5,
-                  decoration: InputDecoration(labelText: 'Enter a paragraph'),
+                  decoration: const InputDecoration(labelText: 'Enter a paragraph'),
                 ),
-                SizedBox(height: 16.0),
+                const SizedBox(height: 16.0),
                 ElevatedButton(
                   onPressed: _breakParagraph,
-                  child: Text('Break Paragraph into Sentences'),
+                  child: const Text('Break Paragraph into Sentences'),
                 ),
-                SizedBox(height: 16.0),
+                const SizedBox(height: 16.0),
                 Expanded(
                   child: ListView.builder(
                     itemCount: _sentences.length,
