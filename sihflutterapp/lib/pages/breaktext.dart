@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:sihflutterapp/pages/ProjectAdd.dart';
+import 'package:sihflutterapp/pages/project_add.dart';
 
 class OutputPage extends StatefulWidget {
+  const OutputPage({super.key});
+
   @override
   State<OutputPage> createState() => _OutputPageState();
 }
@@ -37,12 +39,12 @@ class _OutputPageState extends State<OutputPage> {
                         Navigator.push(
                             context,
                             MaterialPageRoute(
-                              builder: (context) => ProjectAdd(),
+                              builder: (context) => const ProjectAdd(),
                             ));
                       },
-                      icon: Icon(Icons.arrow_back),
+                      icon: const Icon(Icons.arrow_back),
                     ),
-                    Text("Text split",
+                    const Text("Text split",
                         style: TextStyle(
                             color: Colors.white,
                             fontSize: 20,
@@ -56,11 +58,11 @@ class _OutputPageState extends State<OutputPage> {
                   child: Container(
                     height: height * 0.7,
                     width: width * 1.0,
-                    decoration: BoxDecoration(
+                    decoration: const BoxDecoration(
                         color: Colors.white,
                         boxShadow: [
                           BoxShadow(
-                              color: const Color.fromARGB(
+                              color: Color.fromARGB(
                                   255, 220, 219, 219), //New
                               blurRadius: 1.0,
                               offset: Offset(0, 5))

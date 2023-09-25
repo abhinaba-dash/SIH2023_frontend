@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 // import 'package:sihflutterapp/TextConvert.dart';
-import 'package:sihflutterapp/pages/Home.dart';
-import 'package:sihflutterapp/pages/ProjectAdd.dart';
+import 'package:sihflutterapp/pages/home.dart';
+// import 'package:sihflutterapp/pages/ProjectAdd.dart';
 import 'package:sihflutterapp/pages/breaktext.dart';
 
 void main() {
@@ -16,10 +16,10 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       routes: {
-        '/output': (context) => OutputPage(),
+        '/output': (context) => const OutputPage(),
       },
       debugShowCheckedModeBanner: false,
-      title: 'Flutter Demo',
+      title: 'SIH2023',
       theme: ThemeData(
           ),
       home: const Home(),

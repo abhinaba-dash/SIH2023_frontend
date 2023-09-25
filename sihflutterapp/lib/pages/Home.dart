@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:sihflutterapp/pages/ProjectAdd.dart';
+import 'package:sihflutterapp/pages/project_add.dart';
 
 class Home extends StatefulWidget {
   const Home({super.key});
@@ -31,8 +31,12 @@ class _HomeState extends State<Home> {
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    Icon(Icons.format_list_bulleted, color: Colors.white),
-                    Text("Welcome Officer",
+                    // const IconButton(Icons.format_list_bulleted, color: Colors.white),
+                    IconButton(
+                        onPressed: () {},
+                        icon: const Icon(Icons.format_list_bulleted),
+                        color: Colors.white),
+                    const Text("Welcome Officer",
                         style: TextStyle(
                             color: Colors.white,
                             fontSize: 20,
@@ -46,12 +50,11 @@ class _HomeState extends State<Home> {
                   child: Container(
                       height: height * 0.7,
                       width: width * 1.0,
-                      decoration: BoxDecoration(
+                      decoration: const BoxDecoration(
                           color: Colors.white,
                           boxShadow: [
                             BoxShadow(
-                                color: const Color.fromARGB(
-                                    255, 220, 219, 219), //New
+                                color: Color.fromARGB(255, 220, 219, 219), //New
                                 blurRadius: 1.0,
                                 offset: Offset(0, 5))
                           ],
@@ -59,7 +62,7 @@ class _HomeState extends State<Home> {
                       child: Padding(
                         padding: EdgeInsets.symmetric(
                             horizontal: width * 0.045, vertical: height * 0.03),
-                        child: Row(
+                        child: const Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
@@ -81,22 +84,22 @@ class _HomeState extends State<Home> {
                       Navigator.push(
                           context,
                           MaterialPageRoute(
-                            builder: (context) => ProjectAdd(),
+                            builder: (context) => const ProjectAdd(),
                           ));
                     },
-                    child: Row(
+                    style: ElevatedButton.styleFrom(
+                      backgroundColor: const Color.fromARGB(255, 2, 49, 99),
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(30),
+                      ),
+                      fixedSize: const Size(200, 45),
+                    ),
+                    child: const Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         Icon(Icons.add),
                         Text("New Projects"),
                       ],
-                    ),
-                    style: ElevatedButton.styleFrom(
-                      backgroundColor: Color.fromARGB(255, 2, 49, 99),
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(30),
-                      ),
-                      fixedSize: Size(200, 45),
                     ))
               ],
             ),
